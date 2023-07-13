@@ -1,0 +1,65 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "title": "Orange",
+      "description": "Рыжий, сладкий, кислый",
+      "avatar": "catalog/photo_5454150081696611208_y.jpg",
+      "category": "fruit",
+      "price": 10,
+      "date_of_born": "2023-07-03T16:25:33Z",
+      "date_of_change": "2023-07-12T16:25:41Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "title": "tomato",
+      "description": "red, FUUUU",
+      "avatar": "catalog/maxresdefault.jpg",
+      "category": "vegetables",
+      "price": 20,
+      "date_of_born": "2023-07-04T16:27:46Z",
+      "date_of_change": "2023-07-12T16:27:52Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "title": "iPhone",
+      "description": "The best phone",
+      "avatar": "catalog/Фото_готового_торта_Frunos2.JPEG",
+      "category": "electronics",
+      "price": 1000,
+      "date_of_born": "2022-10-19T16:29:06Z",
+      "date_of_change": "2023-07-12T16:29:10Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "title": "fruit",
+      "discription": "some sweet"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "title": "vegetables",
+      "discription": "not sweet"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "title": "electronics",
+      "discription": "(phones, PCs, laptops, TV)"
+    }
+  }
+]
