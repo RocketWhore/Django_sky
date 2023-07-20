@@ -4,24 +4,22 @@ from catalog.models import *
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        product_list = [
+        Product.objects.all().delete()
+        Category.objects.all().delete()
+        category_list = [
             {
-                    "title": "Orange",
-                    "description": "orange, sweet",
-                    "avatar": "catalog/���_�����.png",
-                    "category_id": 1,
-                    "price": 100,
-                    "date_of_born": "2023-07-16T13:10:39.751Z",
-                    "date_of_change": "2023-07-16T13:10:39.751Z"
+                    "title": "fruit",
+                    "description": "sweet",
+
                 },
-            {'title': 'coconut', 'description': 'white', 'category_id': '1', 'price': '100'},
-            {'title': 'cucumber', 'description': 'green', 'category_id': '2', 'price': '100'}
+            {'title': 'vegetables', 'description': 'not sweet', },
+            {'title': 'electronics', 'description': 'Phones, PC', }
 
         ]
-        product_to_create = []
-        for i in product_list:
-            product_to_create.append(
+        category_to_create = []
+        for i in category_list:
+            category_to_create.append(
                 Product(**i)
             )
-        Product.objects.bulk_create(product_to_create)
+        Category.objects.bulk_create(category_to_create)
         # Product.objects.create(**product_list[0])

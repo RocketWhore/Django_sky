@@ -1,22 +1,24 @@
 from django.shortcuts import render
 
-from catalog.models import Product
+from catalog.models import *
 
 
 def index(request):
     product_list = Product.objects.all()
     content = {
-        'object_list': product_list
+        'object_list': product_list,
+        'category_list': Category.objects.all()
     }
-    return render(request, 'catalog/index.html', content)
+    return render(request, 'catalog/home.html', content)
 
-# def index(request):
-#     if request.method == 'POST':
-#         name = request.POST.get('name')
-#         email = request.POST.get('email')
-#         message = request.POST.get('message')
-#         print(f'{name}\n{email}\n{message}')
-#     return render(request, 'catalog/index.html')
+
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        print(f'{name}\n{email}\n{message}')
+    return render(request, 'catalog/contact.html')
 
 def home(request):
     if request.method == 'GET':
@@ -24,4 +26,4 @@ def home(request):
         # email = request.POST.get('email')
         # message = request.POST.get('message')
         # print(f'{name}\n{email}\n{message}')
-        return render(request, 'catalog/home.html')
+        return render(request, 'catalog/index.html')
