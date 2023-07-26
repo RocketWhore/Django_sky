@@ -27,3 +27,12 @@ def home(request):
         # message = request.POST.get('message')
         # print(f'{name}\n{email}\n{message}')
         return render(request, 'catalog/index.html')
+
+def product(request, pk):
+    item = Product.objects.get(pk=pk)
+
+    context = {
+        'object': item,
+
+    }
+    return render(request, 'catalog/product.html', context=context)

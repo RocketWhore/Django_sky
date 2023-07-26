@@ -1,9 +1,11 @@
+
 {% extends 'catalog/base/base.html' %}
 {% block content %}
-        {% for object in object_list %}
-        {% include 'catalog/includes/inc_product_card.html' %}
-        {% endfor %}
-    </div>
+
+{% for object in object_list %}
+{% include 'catalog/includes/inc_product_card.html' %}
+{% endfor %}
+
 <!--    <div>-->
 <!--        {% for object in category_list %}-->
 <!--        {% include 'catalog/includes/inc_product_card.html' %} ТУТ СОЗДАМ КАРТОЧКУ СВОЮ НОВУЮ ПО КАТЕГОРНИЯМ-->
