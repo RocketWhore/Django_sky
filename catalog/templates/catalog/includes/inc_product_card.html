@@ -6,10 +6,16 @@
         <div class="card-body">
             <h1 class="card-title pricing-card-title">RUR {{ object.price }}</h1>
             <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                <li> {{ object.description|truncatechars:100 }} </li>
+                <li> {{ object.description|truncatechars:100 }}</li>
             </ul>
-            <div class="button">
-                <a class="detail" type="submit" href= {% url 'catalog:product' object.pk %} ><p>More...</p></a>
+            <div class="btn-group">
+                <a class="detail" type="submit" href={% url 'catalog:product' object.pk %} ><p>More...</p></a>
+            </div>
+            <div>
+                <a class="detail" type="submit" href='#'><p>Edit</p></a>
+            </div>
+            <div>
+                <a class="detail" type="submit" href='#'><p>Delete</p></a>
             </div>
 
         </div>
