@@ -29,7 +29,7 @@ class MaterialsUpdateView(UpdateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('materials:view0', args=[self.kwargs.get('pk')])
+        return reverse('materials:view', args=[self.kwargs.get('pk')])
 
 class MaterialsListView(ListView):
     model = Materials
