@@ -26,3 +26,16 @@ class Category(models.Model):
         return f'{self.title}'
 
 
+class Version(models.Model):
+    product = models.ForeignKey('catalog.Product', on_delete=models.CASCADE)
+    version = models.PositiveIntegerField()
+    version_title = models.CharField(max_length=100, verbose_name='название версии')
+    is_version = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.version_title}'
+
+    class Meta:
+        verbose_name = 'версия'
+        verbose_name_plural = 'версии'
+

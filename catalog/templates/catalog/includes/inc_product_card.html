@@ -1,3 +1,4 @@
+
 <div class="col-3">
     <div class="card mb-4 box-shadow">
         <div class="card-header">
@@ -12,7 +13,7 @@
                 <a class="detail" type="submit" href={% url 'catalog:product' object.pk %} ><p>More...</p></a>
             </div>
             <div>
-                <a class="detail" type="submit" href='#'><p>Edit</p></a>
+                <a class="detail" type="submit" href='{% url 'catalog:update_product' object.pk %}'><p>Edit</p></a>
             </div>
             <div>
                 <a class="detail" type="submit" href='#'><p>Delete</p></a>

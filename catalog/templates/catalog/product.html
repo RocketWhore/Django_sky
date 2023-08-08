@@ -12,10 +12,13 @@
         <div class="card-body">
             <h1 class="card-title pricing-card-title">RUR {{ object.price }}</h1>
             <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                <li> {{ object.avatar | format_path_to_avatar}} </li>
+                <img src="{{ object.avatar | format_path_to_avatar }}" class="img-fluid rounder-start">
+                <li>{{ object.avatar | format_path_to_avatar}}</li>
                 <li> {{ object.description }} </li>
                 <li> {{ object.date_of_born }} </li>
-                <li> {{ object.date_of_change }} </li>
+                <li> {{ object.version_title }} </li>
+
+
             </ul>
 
 

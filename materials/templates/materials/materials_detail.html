@@ -12,7 +12,8 @@
         <div class="card-body">
             <h1 class="card-title pricing-card-title">slug {{ object.slug }}</h1>
             <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                <li> {{ object.preview | format_path_to_avatar}} </li>
+                <img src="{{ object.preview | format_path_to_avatar}}" >
+
                 <li> {{ object.body }} </li>
                 <li> {{ object.date_of_create }} </li>
                 <li> {{ object.sign_of_pub }} </li>]
