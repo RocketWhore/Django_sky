@@ -44,29 +44,50 @@ class ProductCreateView(CreateView):
     success_url = reverse_lazy('catalog:catalog')
 
 
-
 class ProductUpdateView(UpdateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:catalog')
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self,  **kwargs):
         context_data = super().get_context_data(**kwargs)
-        VersionFormset = inlineformset_factory(Product, Version, form=VersionForm, extra=1)
+        version_formset = inlineformset_factory(Product, Version, form=VersionForm, extra=1)
         if self.request.method == 'POST':
-            context_data['formset'] = VersionFormset(self.request.POST, instance=self.object)
+            context_data['formset'] = version_formset(self.request.POST, instance=self.object)
         else:
-            context_data['formset'] = VersionFormset(instance=self.object)
+            context_data['formset'] = version_formset(instance=self.object)
+
         return context_data
 
     def form_valid(self, form):
         formset = self.get_context_data()['formset']
-        self.object = form.save
+        self.object = form.save()
         if formset.is_valid():
             formset.instance = self.object
-            form.save()
-
+            formset.save()
         return super().form_valid(form)
+# class ProductUpdateView(UpdateView):
+#     model = Product
+#     form_class = ProductForm
+#     success_url = reverse_lazy('catalog:catalog')
+#
+#     def get_context_data(self, **kwargs):
+#         context_data = super().get_context_data(**kwargs)
+#         VersionFormset = inlineformset_factory(Product, Version, form=VersionForm, extra=1)
+#         if self.request.method == 'POST':
+#             context_data['formset'] = VersionFormset(self.request.POST, instance=self.object)
+#         else:
+#             context_data['formset'] = VersionFormset(instance=self.object)
+#         return context_data
+#
+#     def form_valid(self, form):
+#         formset = self.get_context_data()['formset']
+#         self.object = form.save
+#         if formset.is_valid():
+#             formset.instance = self.object
+#             form.save()
+#
+#         return super().form_valid(form)
 
             # def product(request, pk):
 #     item = Product.objects.get(pk=pk)

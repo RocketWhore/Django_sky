@@ -8,7 +8,15 @@
             <h1 class="card-title pricing-card-title">RUR {{ object.price }}</h1>
             <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                 <li> {{ object.description|truncatechars:100 }}</li>
+                <li> Версия: {{ object.version.version_title }} </li>
             </ul>
+            <div class="is_version">
+                {% if object.is_version %}
+                    <p class="card-text">&#9989; Активна</p>
+                {% else %}
+                    <p class="card-text">&#10060; Не активна</p>
+                {% endif %}
+            </div>
             <div class="btn-group">
                 <a class="detail" type="submit" href={% url 'catalog:product' object.pk %} ><p>More...</p></a>
             </div>
