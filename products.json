@@ -1,0 +1,299 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "title": "Orange",
+      "description": "Sweet, red",
+      "avatar": "",
+      "category": 3,
+      "price": 10000,
+      "date_of_born": "2023-07-23T16:41:12.933Z",
+      "date_of_change": "2023-08-12T17:46:49.891Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "title": "cucumber",
+      "description": "green long",
+      "avatar": "",
+      "category": 4,
+      "price": 15,
+      "date_of_born": "2023-07-23T16:41:38.147Z",
+      "date_of_change": "2023-08-12T17:47:00.406Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "title": "iPhone",
+      "description": "the best phone\r\nОЧЕНЬ ДОРОГО",
+      "avatar": "catalog/Image20230718192226.png",
+      "category": 5,
+      "price": 1048,
+      "date_of_born": "2023-07-23T16:42:07.251Z",
+      "date_of_change": "2023-08-09T17:44:12.179Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "title": "Питахайя",
+      "description": "Экзотический фрукт из Таиланда",
+      "avatar": "catalog/2.png",
+      "category": 3,
+      "price": 12000,
+      "date_of_born": "2023-08-05T19:02:38.116Z",
+      "date_of_change": "2023-08-12T17:47:18.441Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "title": "Лонган",
+      "description": "Еще один экзотический фрукт",
+      "avatar": "catalog/расшифровка.jpg",
+      "category": 3,
+      "price": 50,
+      "date_of_born": "2023-08-05T19:04:03.243Z",
+      "date_of_change": "2023-08-12T17:47:45.201Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "title": "Банан",
+      "description": "Всеми любимый и известный фрукт из тропиков",
+      "avatar": "catalog/расшифровка_hBDjGGz.jpg",
+      "category": 3,
+      "price": 21,
+      "date_of_born": "2023-08-05T19:05:34.610Z",
+      "date_of_change": "2023-08-12T17:15:45.835Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "title": "криптуля",
+      "description": "крипта",
+      "avatar": "",
+      "category": 3,
+      "price": 10,
+      "date_of_born": "2023-08-07T20:12:03.061Z",
+      "date_of_change": "2023-08-12T17:44:59.316Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "title": "казиноirf",
+      "description": "казино",
+      "avatar": "",
+      "category": 3,
+      "price": 10000,
+      "date_of_born": "2023-08-07T20:13:00.845Z",
+      "date_of_change": "2023-08-12T17:46:25.811Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 16,
+    "fields": {
+      "title": "крипта2",
+      "description": "аваы",
+      "avatar": "",
+      "category": 4,
+      "price": 34,
+      "date_of_born": "2023-08-07T20:15:23.890Z",
+      "date_of_change": "2023-08-12T17:46:41.126Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 17,
+    "fields": {
+      "title": "fghjk",
+      "description": "sdfghjkl;'",
+      "avatar": "",
+      "category": 4,
+      "price": 12,
+      "date_of_born": "2023-08-08T16:29:35.135Z",
+      "date_of_change": "2023-08-12T17:47:10.209Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 18,
+    "fields": {
+      "title": "gfgffdd",
+      "description": "sdfsdgbdffd",
+      "avatar": "catalog/1.png",
+      "category": 4,
+      "price": 4232,
+      "date_of_born": "2023-08-08T16:40:56.425Z",
+      "date_of_change": "2023-08-12T17:47:34.895Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "title": "fruit",
+      "description": "sweet"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "title": "vegetables",
+      "description": "not sweet"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "title": "electronics",
+      "description": "Phones, PC"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 10,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "product": 10,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 3,
+    "fields": {
+      "product": 13,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "product": 13,
+      "version": 2,
+      "version_title": "1235667",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 5,
+    "fields": {
+      "product": 14,
+      "version": 1,
+      "version_title": "4324",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 6,
+    "fields": {
+      "product": 15,
+      "version": 12,
+      "version_title": "322",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 7,
+    "fields": {
+      "product": 16,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 8,
+    "fields": {
+      "product": 8,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 9,
+    "fields": {
+      "product": 9,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 10,
+    "fields": {
+      "product": 17,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 11,
+    "fields": {
+      "product": 11,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 12,
+    "fields": {
+      "product": 18,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 13,
+    "fields": {
+      "product": 12,
+      "version": 1,
+      "version_title": "first version",
+      "is_version": true
+    }
+  }
+]
