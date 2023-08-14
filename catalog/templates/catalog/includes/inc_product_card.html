@@ -1,4 +1,3 @@
-
 <div class="col-3">
     <div class="card mb-4 box-shadow">
         <div class="card-header">
@@ -8,13 +7,16 @@
             <h1 class="card-title pricing-card-title">RUR {{ object.price }}</h1>
             <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                 <li> {{ object.description|truncatechars:100 }}</li>
-                <li> Версия: {{ object.version.version_title }} </li>
+
+                {% for form in formset %}
+                {% if form.product == object and form.is_version == True %}
+                <h6 class="text-success">{{ form.version_title }} {{form.version}}</h6>
+                {% endif %}
+                {% endfor %}
             </ul>
             <div class="is_version">
-                {% if object.is_version %}
-                    <p class="card-text">&#9989; Активна</p>
-                {% else %}
-                    <p class="card-text">&#10060; Не активна</p>
+                {% if object.version %}
+                {{ object.version_title }}
                 {% endif %}
             </div>
             <div class="btn-group">

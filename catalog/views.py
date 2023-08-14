@@ -1,3 +1,4 @@
+from django.db import transaction
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -10,6 +11,8 @@ from catalog.models import *
 class ProductListView(ListView):
     model = Product
     template_name = 'catalog/home.html'
+
+
 # def index(request):
 #     product_list = Product.objects.all()
 #     content = {
@@ -21,6 +24,8 @@ class ProductListView(ListView):
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'catalog/product.html'
+
+
 def contact(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -28,6 +33,7 @@ def contact(request):
         message = request.POST.get('message')
         print(f'{name}\n{email}\n{message}')
     return render(request, 'catalog/contact.html')
+
 
 def home(request):
     if request.method == 'GET':
@@ -49,22 +55,24 @@ class ProductUpdateView(UpdateView):
     form_class = ProductForm
     success_url = reverse_lazy('catalog:catalog')
 
-    def get_context_data(self,  **kwargs):
+    def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
-        version_formset = inlineformset_factory(Product, Version, form=VersionForm, extra=1)
+        version_formset = inlineformset_factory(self.model, Version, form=VersionForm, extra=1)
         if self.request.method == 'POST':
-            context_data['formset'] = version_formset(self.request.POST, instance=self.object)
+            formset = version_formset(self.request.POST, instance=self.object)
         else:
-            context_data['formset'] = version_formset(instance=self.object)
-
+            formset = version_formset(instance=self.object)
+        context_data['formset'] = formset
         return context_data
 
     def form_valid(self, form):
-        formset = self.get_context_data()['formset']
-        self.object = form.save()
-        if formset.is_valid():
-            formset.instance = self.object
-            formset.save()
+        context_data = self.get_context_data()
+        formset = context_data['formset']
+        with transaction.atomic():
+            self.object = form.save()
+            if formset.is_valid():
+                formset.instance = self.object
+                formset.save()
         return super().form_valid(form)
 # class ProductUpdateView(UpdateView):
 #     model = Product
@@ -89,7 +97,7 @@ class ProductUpdateView(UpdateView):
 #
 #         return super().form_valid(form)
 
-            # def product(request, pk):
+# def product(request, pk):
 #     item = Product.objects.get(pk=pk)
 #
 #     context = {
