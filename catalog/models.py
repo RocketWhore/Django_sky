@@ -3,31 +3,6 @@ from django.db import models
 # Create your models here
 NULLABLE = {'blank':  True, 'null': True}
 
-
-class Category(models.Model):
-    title = models.CharField(max_length=100, db_index=True)
-    description = models.TextField(**NULLABLE)
-
-    def __str__(self):
-        return f'{self.title}'
-
-    def __init__(self):
-        pass
-
-
-class Version(models.Model):
-    product = models.ForeignKey('catalog.Product', on_delete=models.CASCADE)
-    version = models.PositiveIntegerField()
-    version_title = models.CharField(max_length=100, verbose_name='название версии')
-    is_version = models.BooleanField(default=False)
-
-    def __str__(self):
-        return f'{self.version_title}'
-
-    class Meta:
-        verbose_name = 'версия'
-        verbose_name_plural = 'версии'
-
 class Product(models.Model):
     title = models.CharField(max_length=100, verbose_name='наименование')
     description = models.TextField()
@@ -46,9 +21,31 @@ class Product(models.Model):
 
 
 
-
-
     class Meta:
         verbose_name = 'продкут'
         verbose_name_plural = 'продукты'
+class Category(models.Model):
+    title = models.CharField(max_length=100, db_index=True)
+    description = models.TextField(**NULLABLE)
+
+    def __str__(self):
+        return f'{self.title}'
+
+
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    version = models.PositiveIntegerField()
+    version_title = models.CharField(max_length=100, verbose_name='название версии')
+    is_version = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.version_title}'
+
+    class Meta:
+        verbose_name = 'версия'
+        verbose_name_plural = 'версии'
+
+
 

@@ -49,6 +49,9 @@ class ProductCreateView(CreateView):
     form_class = ProductForm
     success_url = reverse_lazy('catalog:catalog')
 
+    def get_object(self, queryset=None):
+        return self.request.user
+
 
 class ProductUpdateView(UpdateView):
     model = Product

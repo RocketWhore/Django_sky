@@ -8,15 +8,16 @@
             <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                 <li> {{ object.description|truncatechars:100 }}</li>
 
-                {% for form in formset %}
-                {% if form.product == object and form.is_version == True %}
-                <h6 class="text-success">{{ form.version_title }} {{form.version}}</h6>
-                {% endif %}
+                {% for version in object.version_set.all %}
+                    {% if version.is_version %}
+
+                        <h6 class="text-success">{{ version.version_title }} {{version.version}}</h6>
+                    {% endif %}
                 {% endfor %}
             </ul>
             <div class="is_version">
                 {% if object.version %}
-                {{ object.version_title }}
+                {{ object.version }}
                 {% endif %}
             </div>
             <div class="btn-group">
